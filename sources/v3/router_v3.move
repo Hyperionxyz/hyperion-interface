@@ -197,7 +197,29 @@ module dex_contract::router_v3 {
     ) {
         abort(0);
     }
-
+    public fun remove_liquidity_by_contract(
+        lp: &signer,
+        lp_object: Object<position_v3::Info>,
+        liquidity_delta: u128,
+        amount_a_min: u64,
+        amount_b_min: u64,
+        _deadline: u64
+    ): (Option<FungibleAsset>, Option<FungibleAsset>) {
+        abort(0);
+    }
+    public fun add_liquidity_by_contract(
+        lp: &signer,
+        lp_object: Object<position_v3::Info>,
+        amount_a_desired: u64,
+        amount_b_desired: u64,
+        amount_a_min: u64,
+        amount_b_min: u64,
+        fa_a: FungibleAsset,
+        fa_b: FungibleAsset,
+        _deadline: u64
+    ): (u64, u64, FungibleAsset, FungibleAsset){
+        abort(0);
+    }
     public entry fun claim_fees(
         _lp: &signer,
         _lp_objects: vector<address>,
