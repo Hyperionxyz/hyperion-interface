@@ -198,6 +198,18 @@ module dex_contract::router_v3 {
     ) {
         abort(0);
     }
+    
+    public fun remove_liquidity_by_contract_with_second_signer(
+        lp: &signer,
+        second_signer: &signer,
+        lp_object: Object<position_v3::Info>,
+        liquidity_delta: u128,
+        amount_a_min: u64,
+        amount_b_min: u64,
+        _deadline: u64
+    ): (Option<FungibleAsset>, Option<FungibleAsset>){
+        (option::none<FungibleAsset>(),option::none<FungibleAsset>())
+    }
     public fun remove_liquidity_by_contract(
         lp: &signer,
         lp_object: Object<position_v3::Info>,
