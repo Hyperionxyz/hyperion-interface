@@ -1,6 +1,6 @@
 module dex_contract::router_v3 {
 
-    use std::option::{Option, none};
+    use std::option::{Self,Option, none};
     use aptos_framework::object::{Object};
     use aptos_framework::fungible_asset::{Metadata, FungibleAsset};
     use dex_contract::position_v3;
