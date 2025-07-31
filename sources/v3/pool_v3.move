@@ -132,14 +132,19 @@ module dex_contract::pool_v3 {
 
     #[event]
     /// Event emitted when a swap happens.
-    struct SwapEvent has drop, store {
+    struct SwapEventV3 has drop, store {
         pool_id: address,
         from_token: Object<Metadata>,
         to_token: Object<Metadata>,
         amount_in: u64,
         amount_out: u64,
         fee_amount: u64,
-        protocol_fee_amount: u64
+        protocol_fee_amount: u64,
+        pool_reserve_a: u64,
+        pool_reserve_b: u64,
+        current_tick: I32,
+        sqrt_price: u128,
+        active_liquidity: u128
     }
 
     #[event]
