@@ -193,8 +193,8 @@ module dex_contract::pool_v3 {
 
     const Q64: u128 = 0x10000000000000000;
     const FEE_RATE_DENOMINATOR: u64 = 1000000;
-    const TICK_SPACING_VEC: vector<u32> = vector[1, 10, 60, 200];
-    const FEE_RATE_VEC: vector<u64> = vector[100, 500, 3000, 10000];
+    const TICK_SPACING_VEC: vector<u32> = vector[1, 10, 60, 200, 20, 50];
+    const FEE_RATE_VEC: vector<u64> = vector[100, 500, 3000, 10000, 1000, 2500];
 
     const ETICK_NOT_EXSIT: u64 = 100001;
     const ESWAP_AMOUNT_INVALID: u64 = 100002;
@@ -208,6 +208,14 @@ module dex_contract::pool_v3 {
     const EOFFSET_OUT_OF_BOUNDS: u64 = 100010;
     const EPOOL_NOT_EXISTS: u64 = 100011;
     const EPOSITION_BLOKED: u64 = 100012;
+    const EINVALID_FEE_RATE: u64 = 100013;
+    const EPROTOCOL_PAUSED: u64 = 100014;
+    const EAMOUNT_ZERO: u64 = 100015;
+    const EPOSITION_BEEN_BLOCKED: u64 = 100016;
+    const EPOSITION_NOT_BEEN_BLOCKED: u64 = 100017;
+    const ENOT_ADMIN: u64 = 100018;
+    const EDEPRECATED: u64 = 11111111;
+
 
     #[view]
     public fun pool_reserve_amount(_pool_id: Object<LiquidityPoolV3>): (u64, u64) {
