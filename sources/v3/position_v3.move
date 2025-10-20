@@ -56,7 +56,7 @@ module dex_contract::position_v3 {
 
     public fun get_pool_info(
         _position: Object<Info>
-    ): (Object<Metadata>, Object<Metadata>, u8) acquires Info {
+    ): (Object<Metadata>, Object<Metadata>, u8){
         abort 1
     }
 
