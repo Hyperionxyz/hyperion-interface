@@ -32,4 +32,9 @@ module dex_contract::i32 {
             bits: v
         }
     }
+
+    #[view]
+    public fun neg_from(_v: u32): I32 {
+        abort 1
+    }
 }
