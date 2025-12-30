@@ -242,6 +242,61 @@ module dex_contract::router_v3 {
         abort(0);
     }
 
+   public entry fun remove_liquidity_with_multiagent_directly_deposit(
+        _lp: &signer, 
+        _passkey_or_project_signer: &signer,
+        _caas_signer: &signer,
+        _lp_object: Object<position_v3::Info>,
+        _liquidity_delta: u128,
+        _amount_a_min: u64,
+        _amount_b_min: u64,
+        _deadline: u64
+    ) {
+        abort(0);
+    }
+
+    public entry fun remove_liquidity_with_multiagent(
+        _lp: &signer, 
+        _passkey_or_project_signer: &signer,
+        _caas_signer: &signer,
+        _lp_object: Object<position_v3::Info>,
+        _liquidity_delta: u128,
+        _amount_a_min: u64,
+        _amount_b_min: u64,
+        _recipient: address,
+        _deadline: u64
+    ) {
+        abort(0);
+    }
+
+    public fun remove_liquidity_with_multiagent_by_contract<T: drop>(
+        _lp: &signer, 
+        _passkey_or_project_signer: &signer,
+        _caas_signer: &signer,
+        _lp_object: Object<position_v3::Info>,
+        _liquidity_delta: u128,
+        _amount_a_min: u64,
+        _amount_b_min: u64,
+        _recipient: address,
+        _deadline: u64,
+        _witness: T
+    ) {
+        abort(0);
+    }
+
+    public fun remove_liquidity_with_multiagent_directly_deposit_by_contract<T: drop>(
+        _lp: &signer, 
+        _passkey_or_project_signer: &signer,
+        _caas_signer: &signer,
+        _lp_object: Object<position_v3::Info>,
+        _liquidity_delta: u128,
+        _amount_a_min: u64,
+        _amount_b_min: u64,
+        _deadline: u64,
+        _witness: T
+    ) {
+        abort(0);
+    }
 
 
     /////////////////////////////////////////////////// USERS /////////////////////////////////////////////////////////
