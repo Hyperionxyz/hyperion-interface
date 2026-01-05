@@ -41,4 +41,19 @@ module dex_contract::tick {
         emissions_per_liquidity_incentive_outside_before: vector<u128>
     }
 
+    #[event]
+    struct TickUpdatedEventV2 has store, drop {
+        pool_id: address,
+        tick: I32,
+        liquidity_gross_before: u128,
+        liquidity_gross_after: u128,
+        liquidity_net_before: I128,
+        liquidity_net_after: I128,
+        flipped: bool,
+        fee_growth_updated: bool,
+        fee_growth_outside_a_before: u128,
+        fee_growth_outside_b_before: u128,
+        emissions_per_liquidity_incentive_outside_before: vector<u128>
+    }
+
 }
