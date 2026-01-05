@@ -157,6 +157,17 @@ module dex_contract::pool_v3 {
     }
 
     #[event]
+    struct ClaimFeesEventV2 has drop, store {
+        pool: Object<LiquidityPoolV3>,
+        lp_object: Object<position_v3::Info>,
+        token: Object<Metadata>,
+        amount: u64,
+        owner: address,
+        token_a_liquidity_after_claim: u64,
+        token_b_liquidity_after_claim: u64
+    }
+
+    #[event]
     struct SwapBeforeEvent has drop, store {
         pool_id: address,
         tick: I32,
@@ -189,6 +200,27 @@ module dex_contract::pool_v3 {
         fee_growth_global_a: u128,
         fee_growth_global_b: u128,
         tick_spacing: u32
+    }
+
+    #[event]
+    struct PoolSnapshotV2 has drop, store {
+        pool_id: address,
+        sqrt_price: u128,
+        liquidity: u128,
+        tick: I32,
+        // the most-recently updated index of the observations array
+        observation_index: u64,
+        // the current maximum number of observations that are being stored
+        observation_cardinality: u64,
+        // the next maximum number of observations to store, triggered in observations.write
+        observation_cardinality_next: u64,
+        fee_rate: u64,
+        fee_rate_denominatore: u64,
+        fee_growth_global_a: u128,
+        fee_growth_global_b: u128,
+        tick_spacing: u32,
+        token_a_reserve: u64,
+        token_b_reserve: u64
     }
 
     const Q64: u128 = 0x10000000000000000;
